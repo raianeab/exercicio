@@ -1,4 +1,4 @@
-# Instruções
+# Raiane
 - Faça uma cópia deste arquivo .md para um repositório próprio
 - Resolva as 8 questões objetivas assinalando a alternativa correta e **justificando sua resposta.**
 - Resolva as 2 questões dissertativas escrevendo no próprio arquivo .md
@@ -22,13 +22,14 @@ var x = 5;
 console.log(y);
 let y = 10;
 ```
+**Resposta:**
 a) A saída será undefined seguido de erro 
 
-b) A saída será 5 seguido de 10
+**Justificativa:**
+Ao tentar executar o código fornecido, ocorre a elevação de declaração (hoisting) em ambas as variáveis, mas o comportamento varia entre var e let. O JavaScript realiza o hoisting das declarações var, ou seja, a variável x é elevada ao topo do escopo com um valor inicial de undefined. Como a atribuição de valor à variável (x = 5) só ocorre depois da chamada console.log(x), a saída da primeira linha será undefined.
 
-c) A saída será undefined seguido de undefined
+Já o let também sofre hoisting, mas, diferente do var, ele não é inicializado automaticamente. Isso significa que a variável y entra em um estado chamado "Temporal Dead Zone" (TDZ) desde o início do escopo até o momento em que recebe um valor. Como console.log(y) tenta acessar y antes de sua declaração, isso resulta em um erro de referência (ReferenceError: Cannot access 'y' before initialization).
 
-d) A saída será erro em ambas as linhas que utilizam console.log
 
 
 **2) O seguinte código JavaScript tem um erro que impede sua execução correta. Analise e indique a opção que melhor corrige o problema. Justifique sua resposta.**
@@ -42,14 +43,11 @@ function soma(a, b) {
 }
 console.log(soma(2, 0));
 ```
-
+**Resposta:**
 a) Substituir if (a || b === 0) por if (a === 0 || b === 0)
 
-b) Substituir if (a || b === 0) por if (a === 0 && b === 0)
-
-c) Substituir if (a || b === 0) por if (a && b === 0)
-
-d) Remover completamente a verificação if (a || b === 0)
+**Justificativa:**
+O código busca verificar se as variaveis ```a``` e ```b``` tem valor nulo antes de proceguir com a soma, para isso é necessário editar a verificação ```if (a || b === 0)```, que está incorreta, ela não verifica corretamente se qualquer um dos valores é igual a zero. A condição ```if (a || b === 0)``` é avaliada de forma errada devido à precedência dos operadores. Primeiro, ```b === 0``` é verificado, e se for ```true```, a expressão ```a || true``` sempre será ```true```, independentemente de ```a```. Isso faz com que a condição seja sempre verdadeira quando ```b``` for 0. Se ```b``` não for 0, a verificação depende de ```a```, mas o comportamento não é o esperado. Dessa maneira o correto é usar ```if (a === 0 || b === 0)```, que realiza as verificações de forma independente e as relaciona para verificar se qualquer um dos valores é 0.
 
 ______
 **3) Ao executar esse código, qual será a saída no console? Indique a alternativa correta e justifique sua resposta.**
@@ -76,13 +74,12 @@ function calcularPreco(tipo) {
 console.log(calcularPreco("eletrônico"));
 ```
 
-a) O código imprime 1000.
-
+**Resposta:**
 b) O código imprime 200.
 
-c) O código imprime 50.
+**Justificativa:**
+Nesse caso a saída será ```200```, pois ao receber ```1000``` como valor a variável ```preco``` continua a receber valores no proximo case ```vestuário``` que atribui o valor ```200```, só depois desse segundo valor que o ```break``` sai do ```switch```, já com a variável é sobrescrita com ```200```.
 
-d) O código gera um erro.
 
 ______
 **4) Ao executar esse código, qual será a saída no console? Indique a alternativa correta e justifique sua resposta.**
@@ -93,13 +90,23 @@ let resultado = numeros.map(x => x * 2).filter(x => x > 5).reduce((a, b) => a + 
 
 console.log(resultado);
 ```
-a) 0
-
-b) 6
-
-c) 18
-
+**Resposta:**
 d) 24
+
+**Justificativa:**
+No código acima temos métodos que estão editando os elementos do array ```let numeros = [1, 2, 3, 4, 5]```. No primeiro método ```map()``` cada número do array foi multiplicado por 2 ```numeros.map(x => x * 2```, resultando em: ```[2, 4, 6, 8, 10]```. Depois, usamos o método ```filter()``` para filtrar os números que são maiores que 5: ```numeros.filter(x => x > 5```, resultando em: ```6, 8, 10]```. Por ultimo, usamos o método ```reduce()``` para somar os números do array resultante, começando com o valor inicial 0: ```numeros.reduce((a, b) => a + b, 0)```. 
+Primeira iteração: a = 0, b = 6 → a + b = 0 + 6 = 6
+Segunda iteração: a = 6, b = 8 → a + b = 6 + 8 = 14
+Terceira iteração: a = 14, b = 10 → a + b = 14 + 10 = 24
+Após isso o resuktado atrivbuido a ```resultado``` é 24.
+
+
+
+
+)
+Depois, foram filtrados os números maiores que 5.
+Por fim, esses números foram somados, resultando em 24.
+
 ______
 **5) Qual será o conteúdo do array lista após a execução do código? Indique a alternativa correta e justifique sua resposta.**
 
