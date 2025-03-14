@@ -2,13 +2,13 @@
 - Faça uma cópia deste arquivo .md para um repositório próprio
 - Resolva as 8 questões objetivas assinalando a alternativa correta e **justificando sua resposta.**
 - Resolva as 2 questões dissertativas escrevendo no próprio arquivo .md
-- Lembre-se de utilizar as estruturas de código como ``esta aqui com ` `` ou
+- Lembre-se de utilizar as estruturas de código como ``esta aqui com ` ```` ou
 `javascript
 //esta aqui com `
 let a = "olá"
 let b = 10
 print(a)
-`
+```
 - Resolva as questões com uso do Visual Studio Code ou ambiente similar.
 - Teste seus códigos antes de trazer a resposta para cá.
 - Cuidado com o uso de ChatGPT (e similares), pois entregar algo só para ganhar nota não fará você aprender. Não seja dependente da máquina!
@@ -16,12 +16,12 @@ print(a)
 
 # Questões objetivas
 **1) Considerando a execução do código abaixo, indique a alternativa correta e justifique sua resposta.**
-`javascript
+```javascript
 console.log(x);
 var x = 5;
 console.log(y);
 let y = 10;
-`
+```
 **Resposta:**
 a) A saída será undefined seguido de erro 
 
@@ -34,7 +34,7 @@ Já o `let` também sofre hoisting, mas, diferente do `var`, ele não é inicial
 
 **2) O seguinte código JavaScript tem um erro que impede sua execução correta. Analise e indique a opção que melhor corrige o problema. Justifique sua resposta.**
 
-`javascript
+```javascript
 function soma(a, b) {
     if (a || b === 0) {
         return "Erro: número inválido";
@@ -42,7 +42,7 @@ function soma(a, b) {
     return a + b;
 }
 console.log(soma(2, 0));
-`
+```
 **Resposta:**
 a) Substituir if (a || b === 0) por if (a === 0 || b === 0)
 
@@ -51,7 +51,7 @@ O código busca verificar se as variaveis `a` e `b` tem valor nulo antes de proc
 
 ______
 **3) Ao executar esse código, qual será a saída no console? Indique a alternativa correta e justifique sua resposta.**
-`javascript
+```javascript
 function calcularPreco(tipo) {
     let preco;
 
@@ -72,7 +72,7 @@ function calcularPreco(tipo) {
 }
 
 console.log(calcularPreco("eletrônico"));
-`
+```
 
 **Resposta:**
 b) O código imprime 200.
@@ -83,13 +83,13 @@ Nesse caso a saída será `200`, pois ao receber `1000` como valor a variável `
 
 ______
 **4) Ao executar esse código, qual será a saída no console? Indique a alternativa correta e justifique sua resposta.**
-`javascript
+```javascript
 let numeros = [1, 2, 3, 4, 5];
 
 let resultado = numeros.map(x => x * 2).filter(x => x > 5).reduce((a, b) => a + b, 0);
 
 console.log(resultado);
-`
+```
 **Resposta:**
 d) 24
 
@@ -103,11 +103,11 @@ Após isso o resuktado atrivbuido a `resultado` é 24.
 ______
 **5) Qual será o conteúdo do array lista após a execução do código? Indique a alternativa correta e justifique sua resposta.**
 
-`javascript
+```javascript
 let lista = ["banana", "maçã", "uva", "laranja"];
 lista.splice(1, 2, "abacaxi", "manga");
 console.log(lista);
-`
+```
 
 **Resposta**
 c) ["banana", "abacaxi", "manga", "laranja"]
@@ -141,7 +141,7 @@ A segunda também é verdadeira, uma vez que a herança em JavaScript é impleme
 ______
 **7) Dado o seguinte código. Indique a alternativa correta e justifique sua resposta.**
 
-`javascript
+```javascript
 class Pessoa {
   constructor(nome, idade) {
     this.nome = nome;
@@ -164,7 +164,7 @@ class Funcionario extends Pessoa {
     console.log(`Meu salário é R$ ${this.salario}.`);
   }
 }
-`
+```
 
 
 **Resposta**
@@ -198,7 +198,7 @@ ______
 # Questões dissertativas
 9) O seguinte código deve retornar a soma do dobro dos números de um array, mas contém erros. Identifique os problema e corrija o código para que funcione corretamente. Adicione comentários ao código explicado sua solução para cada problema.
 
-`javascript
+```javascript
 function somaArray(numeros) {
 
     for (i = 0; i < numeros.size; i++) {
@@ -207,7 +207,7 @@ function somaArray(numeros) {
     return soma;
 }
 console.log(somaArray([1, 2, 3, 4]));
-`
+```
 
 **Resposta**
 
