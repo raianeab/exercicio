@@ -1,19 +1,3 @@
-# Raiane
-- Faça uma cópia deste arquivo .md para um repositório próprio
-- Resolva as 8 questões objetivas assinalando a alternativa correta e **justificando sua resposta.**
-- Resolva as 2 questões dissertativas escrevendo no próprio arquivo .md
-- Lembre-se de utilizar as estruturas de código como ``esta aqui com ` ```` ou
-`javascript
-//esta aqui com `
-let a = "olá"
-let b = 10
-print(a)
-```
-- Resolva as questões com uso do Visual Studio Code ou ambiente similar.
-- Teste seus códigos antes de trazer a resposta para cá.
-- Cuidado com o uso de ChatGPT (e similares), pois entregar algo só para ganhar nota não fará você aprender. Não seja dependente da máquina!
-- Ao final, publique seu arquivo lista_01.md com as respostas em seu repositório, e envie o link pela Adalove. 
-
 # Questões objetivas
 **1) Considerando a execução do código abaixo, indique a alternativa correta e justifique sua resposta.**
 ```javascript
@@ -229,3 +213,42 @@ ______
 - Uma classe `Livro` que herda de `Produto` e modifica o método `calcularDesconto()`, aplicando um desconto de 20% no preço dos livros.
 
 Explique como funciona a herança nesse contexto e como você implementaria a modificação do método na classe `Livro`.
+
+**Resposta**
+
+```javascript
+class Produto { //Classe Produto 
+    constructor(nome, preco) {
+        this.nome = nome; //Atributo nome 
+        this.preco = preco;//Atributo preco
+    }
+
+
+    calcularDesconto() {    //Método para calcular o desconto de 10% no preço do produto
+        return this.preco * 0.90; //Aplica um desconto de 10%
+    }
+}
+
+class Livro extends Produto { //Classe Livro que herda de Produto atraves de 'extends' 
+    constructor(nome, preco) {
+        super(nome, preco); // Chama o construtor da classe Produto para herdar nome e preco
+    }
+
+    // Modificando o método calcularDesconto para aplicar um desconto de 20% em livros
+    calcularDesconto() {
+        return this.preco * 0.80; // Aplica um desconto de 20% para livros
+    }
+}
+
+// Criando um produto e um livro
+let produto = new Produto("Mochila", 150);
+let livro = new Livro("JavaScript Avançado", 40);
+
+// Exibindo os preços com desconto
+console.log(`Preço com desconto da classe Produto: R$ ${produto.calcularDesconto()}`);
+console.log(`Preço com desconto da classe Livro: R$ ${livro.calcularDesconto()}`);
+```
+
+**Justificativa**
+No conceito de herança em JavaScript, utilizamos a palavra-chave `extends` para permitir que uma classe herde características de outra. Nesse sentido, a classe `Produto` representa um produto genérico, contendo dois atributos: `nome` e `preco`. Além disso, ela possui um método chamado `calcularDesconto()`, que aplica um desconto fixo de **10%** ao preço do produto. A classe `Livro` herda de `Produto` usando `extends`, o que significa que ela automaticamente possui os atributos `nome` e `preco`. No entanto, para implementar uma modificação no método da classe, **sobrescrevemos** o método `calcularDesconto()` para aplicar um desconto de **20%** em vez de **10%**.
+
