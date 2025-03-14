@@ -93,7 +93,7 @@ lista.splice(1, 2, "abacaxi", "manga");
 console.log(lista);
 ```
 
-**Resposta**
+**Resposta:**
 c) ["banana", "abacaxi", "manga", "laranja"]
 
 **Justificativa**
@@ -151,7 +151,7 @@ class Funcionario extends Pessoa {
 ```
 
 
-**Resposta**
+**Resposta:**
 a) I e II são verdadeiras.
 
 **Justificativa**
@@ -193,7 +193,7 @@ function somaArray(numeros) {
 console.log(somaArray([1, 2, 3, 4]));
 ```
 
-**Resposta**
+**Resposta:**
 
 ```javascript
 function somaArray(numeros) {
@@ -214,7 +214,7 @@ ______
 
 Explique como funciona a herança nesse contexto e como você implementaria a modificação do método na classe `Livro`.
 
-**Resposta**
+**Resposta:**
 
 ```javascript
 class Produto { //Classe Produto 
